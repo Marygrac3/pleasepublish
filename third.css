@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css?family=PlaywriteIndia=swap');
+:root  {
+    --main-color: #FFCCEA; /* Updated main color */
+    --dark-main: #CDC1FF; /* Updated dark main color */
+    --black: #13131a;
+    --bg: #BFECFF; /* Updated background color */
+}
+/* General Body Styles */
+body {
+    background-color: #BFECFF; /* Pastel cream background */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header.header {
+    background-color: #CDC1FF;  /* Soft pink background */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Remove color from the menu tab on hover and active states */
+.navbar a:hover,
+.navbar .active {
+    background-color: transparent !important; /* Remove background color */
+    color: #333 !important; /* Ensure text color remains dark */
+    border: none !important; /* Remove any border */
+}
+
+/* Logo */
+.header .logo img {
+    width: 120px; /* Logo size */
+    height: auto;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar .active {
+    background-color: #CDC1FF;  /* Light purple color */
+    color: white;
+}
+
+/* Cart Icon */
+.cart-container a {
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Navbar Links */
+.navbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px;
+    transition: color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+.navbar a:hover, .navbar .active {
+    color: #FFF6E3;
+    background-color: #FFCCEA;
+    border-radius: 5px;
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Navbar Mobile Menu */
+#check {
+    display: none;
+}
+
+/* Mobile Hamburger Menu Icon */
+.check-btn {
+    display: none;
+    font-size: 2.5em;
+    color: white;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+/* Mobile Navbar */
+#check:checked ~ .navbar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #A8D8FF;
+    padding: 10px 0;
+    gap: 15px;
+}
+
+#check:checked ~ .navbar a {
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+/* Heading Section */
+.heading {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #FFCCEA; /* Soft lavender background */
+}
+
+.heading h1 {
+    font-size: 2.5em;
+    color: #5A4E91; /* Darker lavender */
+    margin-bottom: 10px;
+}
+
+.heading p {
+    font-size: 1.3em;
+    color: #3E3A59;
+}
+
+/* About Section */
+.container {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+.about-content {
+    margin-top: 30px;
+}
+
+.about-content h2 {
+    font-size: 2em;
+    color: #5A4E91;
+}
+
+.about-content p {
+    font-size: 1.2em;
+    color: #444;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Meet the Team Section */
+.team {
+    padding: 50px 20px;
+    background-color: #F5E8FF;
+    text-align: center;
+}
+
+.team h1 {
+    font-size: 2.5em;
+    color: #5A4E91;
+    margin-bottom: 20px;
+}
+
+.team-cards {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.card-img img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 2px solid #DDD;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Hover effect */
+}
+
+.team-info {
+    padding: 15px;
+}
+
+.team-info h2 {
+    font-size: 1.5em;
+    color: #5A4E91;
+}
+
+.team-info p {
+    font-size: 1em;
+    color: #777;
+}
+
+.team-info button {
+    background-color: #A8D8FF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.team-info button:hover {
+    background-color: #D1C6FF;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 0;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.footer-box {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-box h3 {
+    color: #FFCCEA;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.footer-box p {
+    color: #ccc;
+}
+
+.footer-box a {
+    color: #FFCCEA;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-box a:hover {
+    color: #ffffff;
+}
+
+.icons a {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.icons a:hover {
+    color: #FFCCEA;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #2c3e50; /* Dark grey-blue background */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #FFCCEA; /* Soft pinkish hue for the heading */
+}
+
+.footer p {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.footer .footer-loc a {
+    color: #BDC3C7; /* Light grey color for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .footer-loc a:hover {
+    color: #FFCCEA; /* Hover effect color */
+}
+
+.footer form {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #BDC3C7;
+    width: 250px;
+    margin-right: 10px;
+    background-color: transparent;
+    color: white;
+}
+
+.footer input[type="email"]:focus {
+    border-color: #FFCCEA;
+    outline: none;
+}
+
+.footer button {
+    background-color: #FFCCEA; /* Soft pink button */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer button i {
+    font-size: 1.2em;
+}
+
+.footer button:hover {
+    background-color: #E74C3C; /* Red hover effect for the button */
+}
+
+.footer .icons a {
+    color: white;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer .icons a:hover {
+    color: #FFCCEA; /* Hover effect color */
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}

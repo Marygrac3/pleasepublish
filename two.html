@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Menu</title>
+        <!-- Font Awesome Icons for additional styling -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+        <!-- Custom Stylesheet for the site -->
+        <link rel="stylesheet" href="untitled.css">
+        <style>
+            /* Header Styling */
+            header.header {
+                background: linear-gradient(135deg, #BFECFF, #CDC1FF); /* Smooth gradient between pastel blue and purple */
+                padding: 20px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+    
+            .header .logo img {
+                width: 150px; /* Adjust logo size */
+                height: auto;
+            }
+    
+            .navbar {
+                display: flex;
+                flex-direction: row; /* Items are in a row */
+                list-style: none;
+                gap: 20px;
+                font-size: 18px;
+                font-weight: 500;
+            }
+    
+            .navbar a {
+                color: #333;
+                text-decoration: none;
+                padding: 10px;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+    
+            .navbar a:hover,
+            .navbar .active {
+                background-color: #CDC1FF;  /* Light purple color for active and hover state */
+                color: white;
+            }
+    
+            /* For the logo and menu to be on opposite ends */
+            .header-content {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
+            }
+    
+            /* Cart Icon */
+            .cart-container {
+                position: relative;
+            }
+    
+            .cart-container a {
+                color: #333;
+            }
+    
+            .cart-container .fas {
+                font-size: 25px;
+                cursor: pointer;
+            }
+    
+            /* Styling for Cart Form (Popup) */
+            .cart-form {
+                display: none;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                background-color: white;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                width: 250px;
+                border-radius: 8px;
+            }
+    
+            .cart-container:hover .cart-form {
+                display: block;
+            }
+    
+            .cart-form #totalprice {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <!-- Header Start -->
+<header class="header">
+    <!-- Logo (Left Side) -->
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo">
+    </a>
+
+    <!-- Navbar (Right Side) -->
+    <nav class="navbar">
+        <a href="one.html">Home</a>
+        <a href="two.html" class="active">Menu</a>
+        <a href="three.html">About Us</a>
+    </nav>
+</header>
+<!-- Header End -->
+
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <h1 class="heading">Our Menu</h1>
+        <p class="heading-description">At Silk Stand, we craft more than wigs—we create confidence, one luxurious strand at a time.</p>
+        <div class="category-text">
+            <h3>Check out our designs here!</h3>
+        </div>
+
+    <!-- Cart Icon -->
+    <div class="cart-container">
+        <a href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+    </div>
+
+        <div class="menu-section">
+            <!-- Product 1 -->
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="wig.jpg" alt="Shadowed Twirls">
+                </div>
+                <div class="menu-content">
+                    <h3>Shadowed Twirls</h3>
+                    <p>is a striking and playful hairstyle that combines the classic charm of pigtails with an edgy twist. Featuring a seamless blend of deep black and soft grey hues.</p>
+                    <div onclick="addTocart ('Shadowed Twirls', '₱2,500.00', 'Wig 4.jpg', 'item-1'); return false;">
+                        <button>Shadowed Twirls <span>₱2,500.00</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="wig 2.jpg" alt="Twirl Elegance">
+                </div>
+                <div class="menu-content">
+                    <h3>Twirl Elegance</h3>
+                    <p>Grace in every twist, 'Twirl Elegance' is where timeless beauty meets delicate charm, weaving together an enchanting dance of sophistication.</p>
+                    <div onclick="addTocart ('Twirl Elegance', '₱2,500.00', 'Wig 4.jpg', 'item-2'); return false;">
+                        <button>Twirl Elegance <span>₱2,500.00</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="wig 3.jpg" alt="Blue Bloom Cascade">
+                </div>
+                <div class="menu-content">
+                    <h3>Blue Bloom Cascade</h3>
+                    <p>Let your beauty bloom with 'Blue Bloom Cascade'—where flowing grey meets vibrant blue, and delicate flowers bloom in perfect harmony.</p>
+                    <div onclick="addTocart ('Blue Bloom Cascade', '₱2,500.00', 'Wig 4.jpg', 'item-3'); return false;">
+                        <button>Blue Bloom Cascade <span>₱2,500.00</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="wig 4.jpg" alt="Midnight Wave">
+                </div>
+                <div class="menu-content">
+                    <h3>Midnight Wave</h3>
+                    <p>'Midnight Wave' features sleek, deep midnight black waves that exude elegance and allure, perfect for any sophisticated occasion.</p>
+                    <div onclick="addTocart ('Midnight Wave', '₱2,500.00', 'Wig 4.jpg', 'item-4'); return false;">
+                        <button>Midnight Wave <span>₱2,500.00</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="wig 5.jpg" alt="Gleaming Bliss">
+                </div>
+                <div class="menu-content">
+                    <h3>Gleaming Bliss</h3>
+                    <p>'Gleaming Bliss' is a dazzling blend of golden highlights and soft waves that shine under the light, perfect for adding warmth to your look.</p>
+                    <div onclick="addTocart ('Gleaming Bliss', '₱2,500.00', 'Wig 5.jpg', 'item-5'); return false;">
+                        <button>Gleaming Bliss <span>₱2,500.00</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 6 -->
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="wig 6.jpg" alt="Sunset Hues">
+                </div>
+                <div class="menu-content">
+                    <h3>Sunset Hues</h3>
+                    <p>'Sunset Hues' gives you the beauty of a sunset with soft ombré transitions, creating a warm and fiery look that adds radiance to your style.</p>
+                    <div onclick="addTocart ('Sunset Hues', '₱2,500.00', 'Wig 6.jpg', 'item-6'); return false;">
+                        <button>Sunset Hues <span>₱2,500.00</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 7 -->
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="wig 7.jpg" alt="Lavender Luxe">
+                </div>
+                <div class="menu-content">
+                    <h3>Lavender Luxe</h3>
+                    <p>'Lavender Luxe' is an ethereal and dreamy lavender shade that will add a pop of color and elegance to your ensemble.</p>
+                    <div onclick="addTocart ('Lavender Luxe', '₱2,500.00', 'Wig 7.jpg', 'item-7'); return false;">
+                        <button>Lavender Luxe <span>₱2,500.00</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 8 -->
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="wig 8.jpg" alt="Golden Radiance">
+                </div>
+                <div class="menu-content">
+                    <h3>Golden Radiance</h3>
+                    <p>'Golden Radiance' is a luscious blend of honey blonde and gold, bringing warmth and beauty to your hairstyle.</p>
+                    <div onclick="addTocart ('Golden Radiance', '₱2,500.00', 'Wig 8.jpg', 'item-8'); return false;">
+                        <button>Golden Radiance <span>₱2,500.00</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 9 -->
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="wig 9.jpg" alt="Rose Gold Dream">
+                </div>
+                <div class="menu-content">
+                    <h3>Rose Gold Dream</h3>
+                    <p>'Rose Gold Dream' is a stunning pink-gold mix, exuding elegance and charm with every strand.</p>
+                    <div onclick="addTocart ('Rose Gold Dream', '₱2,500.00', 'Wig 9.jpg', 'item-9'); return false;">
+                        <button>Rose Gold Dream <span>₱2,500.00</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 10 -->
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="wig 10.jpg" alt="Emerald Waves">
+                </div>
+                <div class="menu-content">
+                    <h3>Emerald Waves</h3>
+                    <p>'Emerald Waves' is a captivating deep green hue that flows in soft waves, perfect for a bold yet elegant look.</p>
+                    <div onclick="addTocart ('Emerald Waves', '₱2,500.00', 'Wig 10.jpg', 'item-10'); return false;">
+                        <button>Emerald Waves <span>₱2,500.00</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 11 -->
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="=wig 11.jpg" alt="Peach Blossom">
+                </div>
+                <div class="menu-content">
+                    <h3>Peach Blossom</h3>
+                    <p>'Peach Blossom' is a light and airy peach shade that adds a subtle yet lovely touch to your look.</p>
+                    <div onclick="addTocart ('Peach Blossom', '₱2,500.00', 'Wig 11.jpg', 'item-11'); return false;">
+                        <button>Peach Blossom <span>₱2,500.00</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 12 -->
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="wig 12.jpg" alt="Silver Glimmer">
+                </div>
+                <div class="menu-content">
+                    <h3>Silver Glimmer</h3>
+                    <p>'Silver Glimmer' is a chic silver wig that shines with elegance, perfect for anyone looking to stand out.</p>
+                    <div onclick="addTocart ('Silver Glimmer', '₱2,500.00', 'Wig 12.jpg', 'item-12'); return false;">
+                        <button>Silver Glimmer <span>₱2,500.00</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 13 -->
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="wig 13.jpg" alt="Chocolate Swirl">
+                </div>
+                <div class="menu-content">
+                    <h3>Chocolate Swirl</h3>
+                    <p>'Chocolate Swirl' offers rich chocolate brown tones that add depth and warmth to your look.</p>
+                    <div onclick="addTocart ('Chocolate Swirl', '₱2,500.00', 'Wig 13.jpg', 'item-13'); return false;">
+                        <button>Chocolate Swirl <span>₱2,500.00</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 14 -->
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="wig 14.jpg" alt="Amber Glow">
+                </div>
+                <div class="menu-content">
+                    <h3>Amber Glow</h3>
+                    <p>'Amber Glow' blends rich amber and golden highlights for a hairstyle that's as radiant as the sun.</p>
+                    <div onclick="addTocart ('Amber Glow', '₱2,500.00', 'Wig 14.jpg', 'item-14'); return false;">
+                        <button>Amber Glow <span>₱2,500.00</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 15 -->
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="wig 15.jpg" alt="Ivory Silk">
+                </div>
+                <div class="menu-content">
+                    <h3>Ivory Silk</h3>
+                    <p>'Ivory Silk' is a smooth and glossy ivory blonde that will bring out your inner elegance.</p>
+                    <div onclick="addTocart ('Ivory Silk', '₱2,500.00', 'Wig 15.jpg', 'item-15'); return false;">
+                        <button>Ivory Silk <span>₱2,500.00</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Menu Section End -->
+
+   <!-- Footer Start -->
+<section class="footer">
+    <div class="container">
+        <div class="footer-box">
+            <h3>Location</h3>
+            <div class="footer-loc">
+                <a href="https://www.google.com/maps/place/Technological+University+of+the+Philippines" target="blank">College of Industrial Education, 660. TUP, Ermita, Manila, 1000</a>
+            </div>
+        </div>
+
+        <div class="footer-box">
+            <h3>Newsletter</h3>
+            <p>Stay updated with our latest news!</p>
+            <form>
+                <input type="email" name="email" placeholder="name@gmail.com" required>
+                <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p>Connect with us:</p>
+            <div class="icons">
+                <a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer End -->
+
+    <script src="second.css"></script> <!-- Remove this line, it should be a JS file, not CSS -->
+</body>
+
+</html>

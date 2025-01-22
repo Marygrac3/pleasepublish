@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="Logo.PNG">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="first.css">
+    <style>
+        /* Header Styling */
+        .header {
+            background: linear-gradient(135deg, #BFECFF, #CDC1FF); /* Smooth gradient between pastel blue and purple */
+            padding: 15px 30px; /* Adjusted padding for better spacing */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Logo Styling */
+        .header .logo img {
+            width: 100px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .header .logo img:hover {
+            transform: scale(1.1); /* Logo hover effect */
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px; /* Space between navbar items */
+        }
+
+        /* Navbar Links */
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px;
+            transition: color 0.3s ease, transform 0.2s ease;
+            font-weight: bold;
+        }
+
+        .navbar a:hover, .navbar .active {
+            color: #FFF6E3;
+            background-color: #FFCCEA;
+            border-radius: 5px;
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+
+        /* Navbar Check Button (For mobile) */
+        #check {
+            display: none;
+        }
+
+        /* Mobile Hamburger Menu Icon */
+        .check-btn {
+            display: none;
+            font-size: 2.5em;
+            color: white;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+        }
+
+        /* When the menu is toggled, show the navbar */
+        #check:checked ~ .navbar {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background-color: #BFECFF;
+            padding: 10px 0;
+            gap: 15px;
+        }
+
+        #check:checked ~ .navbar a {
+            color: white;
+            font-size: 1.5em;
+            text-align: center;
+            padding: 10px 20px;
+            width: 100%;
+        }
+
+        /* Mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                display: none; /* Hide navbar initially on mobile */
+            }
+
+            /* Make the hamburger menu icon visible on mobile */
+            .check-btn {
+                display: block;
+            }
+
+            /* Show navbar when checkbox is checked */
+            #check:checked ~ .navbar {
+                display: flex;
+            }
+
+            /* Adjust navbar items on mobile */
+            .navbar a {
+                margin: 10px 0; /* Vertical spacing for navbar items */
+                font-size: 1.4em; /* Larger font size on mobile */
+            }
+        }
+
+        /* Page Content Styling */
+        .content {
+            background-color: #ffffff; /* White background for content */
+            margin: 20px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            color: #333;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Styling for the About section */
+        .About {
+            background-color: #f0f4f8;  /* Light grayish background for better contrast */
+            padding: 40px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .about-content p {
+            font-size: 20px;
+            line-height: 1.5;
+            color: #000;
+            text-align: justify;
+        }
+
+        /* Menu Section Styling */
+        .menu-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-evenly;
+            padding: 20px;
+        }
+
+        /* Menu Box Styling */
+        .menu-box {
+            width: 300px;
+            background: #ffffff;  /* White background inside the box */
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 2px solid #CDC1FF;  /* Pastel purple border */
+        }
+
+        .menu-img {
+            padding: 15px;
+            border: 5px solid #f0f0f0;
+            border-radius: 15px;
+            background: #f9f9f9;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .menu-img:hover {
+            transform: scale(1.05);
+            border-color: #FFCCEA;
+        }
+
+        .menu-content {
+            padding: 20px;
+            background: #ffffff;
+            color: #333;
+        }
+
+        .menu-content h3 {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .menu-content p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .menu-content button {
+            background-color: #BFECFF; /* Button Color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .menu-content button:hover {
+            background-color: #CDC1FF; /* Button Hover Color */
+            transform: translateY(-2px);
+        }
+
+        .menu-content span {
+            font-weight: bold;
+            color: #FFCCEA; /* Price color */
+        }
+    </style>
+</head>
+<body>
+   <!-- Header Start -->
+<header class="header">
+    <!-- Logo (Left Side) -->
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo">
+    </a>
+
+    <!-- Navbar (Right Side) -->
+    <nav class="navbar">
+        <a href="one.html">Home</a>
+        <a href="two.html" class="active">Menu</a>
+        <a href="three.html">About Us</a>
+    </nav>
+</header>
+<!-- Header End -->
+
+    <!-- Page Content -->
+    <div class="content">
+        <section class="About">
+            <div class="about-content">
+                <br>
+                <br>
+                <h2>Transform your look, embrace your style—every wig tells a new story.</h2>
+                <p>Silk Stand is your ultimate destination for premium wigs that blend style, comfort, and quality. We offer a curated collection of luxurious, natural-looking wigs designed to elevate your confidence and transform your look with ease. Whether you're seeking everyday elegance or a bold new style, our expertly crafted wigs are made from the finest materials, ensuring a soft, silky feel that moves with you. At Silk Stand, we believe everyone deserves to feel beautiful, empowered, and effortlessly every day.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Top Sellers Section -->
+    <section class="menu" id="menu">
+        <h1 class="heading">BEST <span>SELLING</span> WIGS</h1>
+
+        <div class="container menu-section">
+            <!-- Product 1 -->
+            <a href="two.html#wig1">
+                <div class="menu-box">
+                    <div class="menu-img">
+                        <img src="wig.jpg" alt="Shadowed Twirls">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Shadowed Twirls</h3>
+                        <p>Is a striking and playful hairstyle that combines the classic charm of pigtails with an edgy twist. Featuring a seamless blend of deep black and soft grey hues.</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 2 -->
+            <a href="two.html#wig2">
+                <div class="menu-box">
+                    <div class="menu-img">
+                        <img src="wig 2.jpg" alt="Twirl Elegance">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Twirl Elegance</h3>
+                        <p>Grace in every twist, 'Twirl Elegance' is where timeless beauty meets delicate charm, weaving together an enchanting dance of sophistication.</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 3 -->
+            <a href="two.html#wig3">
+                <div class="menu-box">
+                    <div class="menu-img">
+                        <img src="wig 3.jpg" alt="Blue Bloom Cascade">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Blue Bloom Cascade</h3>
+                        <p>Let your beauty bloom with 'Blue Bloom Cascade'—where flowing grey meets vibrant blue, and delicate flowers bloom in perfect harmony.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="to-menu">
+            <a href="two.html">See more designs here!</a>
+        </div>
+    </section>
+    <!-- Top Sellers End -->
+
+  <!-- Footer Start -->
+<section class="footer">
+    <div class="container">
+        <div class="footer-box">
+            <h3>Location</h3>
+            <div class="footer-loc">
+                <a href="https://www.google.com/maps/place/Technological+University+of+the+Philippines" target="blank">College of Industrial Education, 660. TUP, Ermita, Manila, 1000</a>
+            </div>
+        </div>
+
+        <div class="footer-box">
+            <h3>Newsletter</h3>
+            <p>Stay updated with our latest news!</p>
+            <form>
+                <input type="email" name="email" placeholder="name@gmail.com" required>
+                <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p>Connect with us:</p>
+            <div class="icons">
+                <a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer End -->
+
+    <script src="two.html"></script>
+</body>
+</html>
